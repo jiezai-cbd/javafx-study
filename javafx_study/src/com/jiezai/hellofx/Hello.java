@@ -23,8 +23,10 @@ public class Hello extends Application {
         //primaryStage.setIconified(true);//设置最小化
         //primaryStage.setMaximized(true);//设置最大化
         //primaryStage.close();//关闭
-        primaryStage.setWidth(500);
-        primaryStage.setHeight(500);
+//        primaryStage.setX(100);
+//        primaryStage.setY(100);
+//        primaryStage.setWidth(500);
+//        primaryStage.setHeight(500);
         //primaryStage.setResizable(true);
 //        primaryStage.setMaxHeight(800);
 //        primaryStage.setMaxWidth(800);
@@ -33,23 +35,38 @@ public class Hello extends Application {
 //        System.out.println("height:" + primaryStage.getHeight());
 
 
-        primaryStage.heightProperty().addListener(new ChangeListener<Number>(){
+//        primaryStage.heightProperty().addListener(new ChangeListener<Number>(){
+//            @Override
+//            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+//                System.out.println("height:"+newValue.doubleValue());
+//            }
+//        });
+//
+//        primaryStage.widthProperty().addListener(new ChangeListener<Number>(){
+//            @Override
+//            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+//                System.out.println("width:"+newValue.doubleValue());
+//            }
+//        });
+        primaryStage.xProperty().addListener(new ChangeListener<Number>(){
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("height:"+newValue.doubleValue());
+                System.out.println("x:"+newValue);
             }
         });
-
-        primaryStage.widthProperty().addListener(new ChangeListener<Number>(){
+        primaryStage.yProperty().addListener(new ChangeListener<Number>(){
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                System.out.println("width:"+newValue.doubleValue());
+                System.out.println("y:"+newValue);
             }
         });
-        primaryStage.setFullScreen(true);
-        primaryStage.setScene(new Scene(new Group()));
-//        在show()方法之后设置默认的宽高，因此如果没有收动设置宽高，
-//        需要在show（)方法之后获取宽高，否则获取不到
+//        primaryStage.setFullScreen(true);
+//
+//        primaryStage.setScene(new Scene(new Group()));
+//        primaryStage.setOpacity(0.5);
+        primaryStage.setAlwaysOnTop(true);
+        /*how()方法之后设置默认的宽高，因此如果没有收动设置宽高，
+        需要在show（)方法之后获取宽高，否则获取不到*/
         primaryStage.show();
 
 
